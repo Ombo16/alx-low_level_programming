@@ -1,18 +1,2 @@
 #!/bin/bash
-
-if [ -z "$CFILE" ]; then
-    echo "Error: Please specify the C file name in the CFILE variable."
-    exit 1
-fi
-
-# Extract the file name without extension
-BASENAME="${CFILE%.c}"
-
-# Compile the C file to generate the assembly code
-gcc -S -masm=intel "$CFILE" -o "${BASENAME}.s"
-
-if [ $? -eq 0 ]; then
-    echo "Assembly code generated successfully: ${BASENAME}.s"
-else
-    echo "Error: Assembly code generation failed."
-fi
+export CFILE=0-main.c; gcc -S -masm=intel "$CFILE" -o "${CFILE%.c}.s"
