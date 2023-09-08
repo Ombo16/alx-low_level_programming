@@ -3,13 +3,13 @@
 /**
  * main - Entry point of the program
  *
- * This program prints all single-digit numbers in base 10,
- * starting from 0 and followed by a new line, 
- * using the putchar function twice.
+ * The program prints all single-digit numbers in base 10,
+ * starting from 0 and followed by a new line,
+ * using only two putchar calls.
  *
  * Return: Always 0 (Success)
  */
-int main (void)
+int main(void)
 {
 	int digit;
 
