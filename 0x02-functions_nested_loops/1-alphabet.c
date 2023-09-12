@@ -1,6 +1,7 @@
 #include <unistd.h>
 
-void print_alphabet(void);  /* Declaration of the print_alphabet function */
+/* Declaration of the print_alphabet function */
+void print_alphabet(void);
 
 /**
  * main - Entry point of the program
