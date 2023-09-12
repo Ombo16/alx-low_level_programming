@@ -4,17 +4,20 @@
 /* Prototype for the _putchar function */
 int _putchar(char c);
 
-/* Prototypes for the functions */
+/* Prototype for the print_alphabet function */
 void print_alphabet(void);
+
+/* Prototype for the print_alphabet_x10 function */
 void print_alphabet_x10(void);
+
+/* Prototype for the _islower function */
 int _islower(int c);
+
+/* Prototype for the _isalpha function */
 int _isalpha(int c);
+
+/* Prototype for the print_sign function */
 int print_sign(int n);
-int _abs(int n);
-int print_last_digit(int n);
-void jack_bauer(void);
-void times_table(void);
-int add(int a, int b);
-int main(void);
 
 #endif /* MAIN_H */
+
