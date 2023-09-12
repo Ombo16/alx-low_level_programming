@@ -10,7 +10,10 @@
  */
 int main(void)
 {
-    char putchar_char = '_';
+    char putchar_char;
+    char newline_char;
+
+    putchar_char = '_';
     write(1, &putchar_char, 1);  /* Using write to print a single character */
     putchar_char = 'p';
     write(1, &putchar_char, 1);
@@ -27,7 +30,7 @@ int main(void)
     putchar_char = 'r';
     write(1, &putchar_char, 1);
 
-    char newline_char = '\n';
+    newline_char = '\n';
     write(1, &newline_char, 1);  /* Printing a new line */
 
     return (0);
