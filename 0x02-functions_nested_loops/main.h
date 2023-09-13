@@ -33,4 +33,7 @@ void jack_bauer(void);
 /* Prototype for the times_table function */
 void times_table(void);
 
+/* Prototype for the add function */
+int add(int a, int b);
+
 #endif /* MAIN_H */
