@@ -29,6 +29,12 @@ void print_times_table(int n)
 					_putchar('0' + (result / 10));
 
 				_putchar('0' + (result % 10));
+				else if (result > 100)
+				_putchar(' ');
+
+			_putchar('0' + (result / 100));
+			_putchar('0' + ((result / 10) % 10));
+			_putchar('0' + (result % 10));
 			}
 		}
 		_putchar('\n');
