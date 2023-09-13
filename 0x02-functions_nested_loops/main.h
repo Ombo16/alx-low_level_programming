@@ -36,4 +36,7 @@ void times_table(void);
 /* Prototype for the add function */
 int add(int a, int b);
 
+/* Prototype for the print_to_98 function */
+void print_to_98(int n);
+
 #endif /* MAIN_H */
