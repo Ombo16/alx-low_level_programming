@@ -24,11 +24,7 @@ int main(void)
 	}
 	password[PASSWORD_LENGTH] = '\0';
 	
-	if (strcmp(password, expected_password) == 0)
-        {
 	printf("Tada! Congrats\n");
-	break;
-	}
 	}
 
 	return 0;
