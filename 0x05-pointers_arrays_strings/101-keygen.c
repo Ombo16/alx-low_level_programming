@@ -7,24 +7,20 @@
 
 int main(void)
 {
-	const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-	char password[PASSWORD_LENGTH + 1];
-	int i;
+    char password[PASSWORD_LENGTH + 1];
+    const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    int i;
 
-	srand((unsigned int)time(NULL));
+    srand((unsigned int)time(NULL));
 
-	while (1)
-	{
-	
-		for (i = 0; i < PASSWORD_LENGTH; i++)
-	{
-	int index = rand() % (sizeof(charset) - 1);
-	password[i] = charset[index];
-	}
-	password[PASSWORD_LENGTH] = '\0';
-	
-	printf("Tada! Congrats\n");
-	}
+    for (i = 0; i < PASSWORD_LENGTH; i++)
+    {
+        int index = rand() % (sizeof(charset) - 1);
+        password[i] = charset[index];
+    }
+    password[PASSWORD_LENGTH] = '\0';
 
-	return 0;
+    printf("Generated password: %s\n", password);
+
+    return 0;
 }
