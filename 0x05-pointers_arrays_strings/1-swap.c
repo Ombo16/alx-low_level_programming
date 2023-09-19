@@ -7,9 +7,9 @@
  */
 void swap_int(int *a, int *b)
 {
-    int temp; // Temporary variable to hold the value during the swap
+    int temp;
 
-    temp = *a; // Store the value of 'a' in 'temp'
-    *a = *b;   // Assign the value of 'b' to 'a'
-    *b = temp; // Assign the original value of 'a' (stored in 'temp') to 'b'
+    temp = *a;
+    *a = *b;
+    *b = temp;
 }
