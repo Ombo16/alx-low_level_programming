@@ -8,7 +8,6 @@
 int main(void)
 {
 	const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-	const char expected_password[] = "Tada! Congrats";
 	char password[PASSWORD_LENGTH + 1];
 	int i;
 
