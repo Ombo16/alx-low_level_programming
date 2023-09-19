@@ -26,7 +26,6 @@ int main(void)
 	
 	if (strcmp(password, expected_password) == 0)
         {
-	printf("Generated password: %s\n", password);
 	printf("Tada! Congrats\n");
 	break;
 	}
