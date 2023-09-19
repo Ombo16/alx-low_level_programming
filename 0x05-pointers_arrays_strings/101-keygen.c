@@ -9,6 +9,7 @@ int main(void)
 {
     char password[PASSWORD_LENGTH + 1];
     const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    const char expected_password[] = "Tada! Congrats";
     int i;
 
     srand((unsigned int)time(NULL));
@@ -21,6 +22,11 @@ int main(void)
     password[PASSWORD_LENGTH] = '\0';
 
     printf("Generated password: %s\n", password);
+
+    if (strcmp(password, expected_password) == 0)
+    {
+        printf("Tada! Congrats\n");
+    }
 
     return 0;
 }
