@@ -21,11 +21,13 @@ int main(void)
     }
     password[PASSWORD_LENGTH] = '\0';
 
-    printf("Generated password: %s\n", password);
-
     if (strcmp(password, expected_password) == 0)
     {
         printf("Tada! Congrats\n");
+    }
+    else
+    {
+        printf("Generated password: %s\n", password);
     }
 
     return 0;
