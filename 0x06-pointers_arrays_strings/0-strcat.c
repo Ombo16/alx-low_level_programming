@@ -9,23 +9,20 @@
  * Return: A pointer to the resulting string `dest`.
  */
 
-char *_strcat(char *dest, const char *src)
+char *_strcat(char *dest, char *src) 
+
 {
-    char *dest_end = dest;
 
-    while (*dest_end)
-    {
-        dest_end++;
-    }
-
-    while (*src)
-    {
-        *dest_end = *src;
-        dest_end++;
-        src++;
-    }
-
-    *dest_end = '\0';
-
-    return dest;
+  int i = 0;
+  while (dest[i] != '\0') {
+    i++;
+  }
+  int j = 0;
+  while (src[j] != '\0') {
+    dest[i] = src[j];
+    i++;
+    j++;
+  }
+  dest[i] = '\0';
+  return dest;
 }
