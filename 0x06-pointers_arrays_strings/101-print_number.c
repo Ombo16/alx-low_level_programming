@@ -10,22 +10,28 @@ void print_number(int n)
 
 	divisor = 1;
 	neg_flag = 0;
-	digit = (n/divisor)%10;
+	temp = n/ divisor
 
-	if (n < 0)
-	{
-		_putchar('-');
-		neg_flag = 1;
-	}
+    if (n < 0)
+    {
+        _putchar('-');
+        neg_flag = 1;
+    }
 
-	while (n / divisor > 9 || n / divisor < -9)
-		divisor *= 10;
+    temp = n;
+    while (temp / 10 != 0)
+    {
+        divisor *= 10;
+        temp /= 10;
+    }
 
-	while (divisor > 0)
-	{
-		if (digit < 0)
-			digit = -digit;
-		_putchar(digit + '0');
-		divisor /= 10;
-	}
+    while (divisor != 0)
+    {
+        temp = n / divisor;
+        if (temp < 0)
+            temp = -temp;
+        _putchar('0' + temp);
+        n -= temp * divisor;
+        divisor /= 10;
+    }
 }
