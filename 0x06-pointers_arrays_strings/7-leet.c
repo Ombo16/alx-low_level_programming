@@ -21,10 +21,10 @@ char *leet(char *s)
 	{
 	if (s[x] == letter[y])
 	{
-		s[x] = new[y];
-		break;
-	    }
-		y++;
+	s[x] = new[y];
+	break;
+	}
+	y++;
 	}
 	x++;
 	}
