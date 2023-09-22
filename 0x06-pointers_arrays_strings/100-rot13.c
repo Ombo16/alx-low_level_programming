@@ -1,41 +1,33 @@
 #include "main.h"
 
 /**
- * rot13 - Encodes a string using ROT13.
- * @str: The string to encode.
+ * rot13 - Encode a string using ROT13
+ * @s: The string to encode.
  *
  * Return: A pointer to the encoded string.
  */
-char *rot13(char *str)
+char *rot13(char *s)
 {
-    char *result = str;
-    char *letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-    char *rot13 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+    int x;
+    char *sera = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    char *serb = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-    while (*str)
+    for (x = 0; s[x]; x++)
     {
-        char *letter = letters;
-        char *rot13_letter = rot13;
-        int encoded = 0;
+        char *sera_ptr = sera;
+        char *serb_ptr = serb;
 
-        while (*letter)
+        while (*sera_ptr)
         {
-            if (*str == *letter)
+            if (s[x] == *sera_ptr)
             {
-                *str = *rot13_letter;
-                encoded = 1;
+                s[x] = *serb_ptr;
                 break;
             }
-
-            letter++;
-            rot13_letter++;
-        }
-
-        if (!encoded)
-        {
-            str++;
+            sera_ptr++;
+            serb_ptr++;
         }
     }
 
-    return result;
+    return s;
 }
