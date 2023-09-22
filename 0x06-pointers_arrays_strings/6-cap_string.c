@@ -54,6 +54,5 @@ char *cap_string(char *str)
 	str++;
 	}
 
-	return result;
+	return (result);
 }
-
