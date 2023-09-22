@@ -22,11 +22,11 @@ char *leet(char *str)
 	while (*leet_char)
 	{
 	if (*str == *leet_char)
-		{
-		*str = *replacement;
-		replace = 1;
-		break;
-		}
+	{
+	*str = *replacement;
+	replace = 1;
+	break;
+	}
 
 	leet_char++;
 	replacement++;
