@@ -9,46 +9,32 @@
 char *rot13(char *str)
 {
     char *result = str;
-    char *uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    char *lowercase = "abcdefghijklmnopqrstuvwxyz";
-    char *rot13_upper = "NOPQRSTUVWXYZABCDEFGHIJKLM";
-    char *rot13_lower = "nopqrstuvwxyzabcdefghijklm";
+    char *letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    char *rot13 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
     while (*str)
     {
-        char *uc = uppercase;
-        char *lc = lowercase;
-        char *rot13_uc = rot13_upper;
-        char *rot13_lc = rot13_lower;
+        char *letter = letters;
+        char *rot13_letter = rot13;
         int encoded = 0;
 
-        while (*uc)
+        while (*letter)
         {
-            if (*str == *uc)
+            if (*str == *letter)
             {
-                *str = *rot13_uc;
+                *str = *rot13_letter;
                 encoded = 1;
                 break;
             }
-            uc++;
-            rot13_uc++;
+
+            letter++;
+            rot13_letter++;
         }
 
         if (!encoded)
         {
-            while (*lc)
-            {
-                if (*str == *lc)
-                {
-                    *str = *rot13_lc;
-                    break;
-                }
-                lc++;
-                rot13_lc++;
-            }
+            str++;
         }
-
-        str++;
     }
 
     return result;
