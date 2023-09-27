@@ -13,7 +13,7 @@ int _sqrt_recursive(int n, int guess)
 {
 	if (guess * guess == n)
 	{
-	return guess;
+	return (guess);
 	}
 	else if (guess * guess > n)
 	{
