@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _pow_recursion -function returns 
+ * _pow_recursion - the function returns
  * the value of x raised to the power of y.
  * @x: The base.
  * @y: The exponent.

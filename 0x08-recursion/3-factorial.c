@@ -2,7 +2,8 @@
 #include <stdio.h>
 
 /**
- * factorial - fucntion returns the factorial of a given number(1x2x3x4...xn-1xn)
+ * factorial - fucntion returns
+ * the factorial of a given number(1x2x3x4...xn-1xn)
  * @n: The number for which to calculate the factorial.
  *
  * Return: The factorial of the number, or -1 for error.
