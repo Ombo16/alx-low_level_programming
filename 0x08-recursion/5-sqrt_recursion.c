@@ -3,8 +3,8 @@
 
 /**
  * _sqrt_recursive - auxillary function which
- * calculates the square root recursively.
- * @n: The number for which to calculate the square root.
+ * calculates the square root recursively
+ * @n: The number for which to calculate the square root
  * @guess: The current guess for the square root.
  *
  * Return: The natural square root of n, or -1 if it does not exist.
