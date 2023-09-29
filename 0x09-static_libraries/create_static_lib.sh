@@ -1,3 +1,3 @@
 #!/bin/bash
-gcc -c *.c mylib.a
+gcc -c *.c
 ar rc liball.a *.o
