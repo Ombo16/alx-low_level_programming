@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Prints the number of arguments passed into the program.
+ * main -the program prints all the command-line arguments.
  *
  * @argc: The number of command-line arguments.
  * @argv: An array containing the command-line arguments.
@@ -10,9 +10,12 @@
  */
 int main(int argc, char *argv[])
 {
-	(void) argv;
+	int a;
 
-	printf("%d\n", argc - 1);
+	for (a = 0; a < argc; a++)
+	{
+	printf("%s\n", argv[a]);
+	}
 
 	return (0);
 }
