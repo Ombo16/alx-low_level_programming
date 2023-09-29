@@ -1,42 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
+#include <ctype.h>
 
 /**
- * is_positive_number - Checks if a string is a positive number
- *
- * @str: The string to check
- *
- * Return: true if str is a positive number, false otherwise
+ * main -adds positive numbers and then prints the result
+ * @argc: type int argument
+ * @argv: type char argument of string.
+ * Return: if not receive 2 arg, rt error
  */
-bool is_positive_number(const char *str) {
-    while (*str) {
-        if (*str < '0' || *str > '9') {
-            return false;
-        }
-        str++;
-    }
-    return true;
-}
+int main(int argc, char *argv[])
+{
+    int i;
+    int j;
+    int add;
 
-int main(int argc, char *argv[]) {
-    if (argc == 1) {
-        printf("0\n");
-        return 0;
-    }
-
-    int sum = 0;
-    for (int i = 1; i < argc; i++) {
-        if (is_positive_number(argv[i])) {
-            int num = atoi(argv[i]);
-            sum += num;
-        } else {
-            printf("Error\n");
-            return 1;
+    (void)argv;
+    add = 0;
+    if (argc > 1)
+    {
+        for (i = 1; i < argc; i++)
+        {
+            for (j = 0; argv[i][j] != '\0'; j++)
+            {
+                if (!isdigit(argv[i][j]))
+                {
+                    printf("Error\n");
+                    return (1);
+                }
+            }
+            add += atoi(argv[i]);
         }
     }
-
-    printf("%d\n", sum);
-
-    return 0;
+    printf("%d\n", add);
+    return (0);
 }
