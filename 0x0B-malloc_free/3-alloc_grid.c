@@ -9,11 +9,13 @@
  * @height: type int height.
  * Return: Null if 0 or negative.
  */
-int **alloc_grid(int width, int height) {
+int **alloc_grid(int width, int height)
+{
 	int **grid;
 	int a, b;
 
-	if (width <= 0 || height <= 0) {
+	if (width <= 0 || height <= 0)
+	{
 		return (NULL);
 	}
 
@@ -22,16 +24,20 @@ int **alloc_grid(int width, int height) {
 		return (NULL);
 	}
 
-	for (a = 0; a < height; a++) {
+	for (a = 0; a < height; a++)
+	{
 		grid[a] = (int *)malloc(width * sizeof(int));
-		if (grid[a] == NULL) {
-			for (b = 0; b < a; b++) {
+		if (grid[a] == NULL)
+		{
+			for (b = 0; b < a; b++)
+			{
 				free(grid[b]);
 			}
 			free(grid);
 			return (NULL);
 		}
-		for (b = 0; b < width; b++) {
+		for (b = 0; b < width; b++)
+		{
 			grid[a][b] = 0;
 		}
 	}
