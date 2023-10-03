@@ -10,8 +10,8 @@
  */
 char *argstostr(int ac, char **av)
 {
-	 char *result;
-	int arg;
+	char *result;
+	int arg, subarg;
 	int total_length = ac;
 	int current_index = 0;
 
