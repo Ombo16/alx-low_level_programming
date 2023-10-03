@@ -10,17 +10,17 @@
  */
 char *argstostr(int ac, char **av)
 {
-	char *result;
-	int arg, subarg;
-	int total_length = ac;
-	int current_index = 0;
+    char *result;
+    int arg, subarg;
+    int total_length = ac;
+    int current_index = 0;
 
     if (ac == 0 || av == NULL)
         return (NULL);
 
-    for (int arg = 0; arg < ac; arg++)
+    for (arg = 0; arg < ac; arg++)
     {
-        for (int subarg = 0; av[arg][subarg]; subarg++)
+        for (subarg = 0; av[arg][subarg]; subarg++)
             total_length++;
     }
 
@@ -29,9 +29,9 @@ char *argstostr(int ac, char **av)
     if (result == NULL)
         return (NULL);
 
-    for (int arg = 0; arg < ac; arg++)
+    for (arg = 0; arg < ac; arg++)
     {
-        for (int subarg = 0; av[arg][subarg]; subarg++)
+        for (subarg = 0; av[arg][subarg]; subarg++)
         {
             result[current_index++] = av[arg][subarg];
         }
