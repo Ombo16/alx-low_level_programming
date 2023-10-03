@@ -10,35 +10,35 @@
  */
 char *argstostr(int ac, char **av)
 {
-    char *result;
-    int arg, subarg;
-    int total_length = ac;
-    int current_index = 0;
+	char *result;
+	int arg, subarg;
+	int total_length = ac;
+	int current_index = 0;
 
-    if (ac == 0 || av == NULL)
-        return (NULL);
+	if (ac == 0 || av == NULL)
+		return (NULL);
 
-    for (arg = 0; arg < ac; arg++)
-    {
-        for (subarg = 0; av[arg][subarg]; subarg++)
-            total_length++;
-    }
+	for (arg = 0; arg < ac; arg++)
+	{
+		for (subarg = 0; av[arg][subarg]; subarg++)
+			total_length++;
+	}
 
-    result = (char *)malloc((total_length + 1) * sizeof(char));
+	result = (char *)malloc((total_length + 1) * sizeof(char));
 
-    if (result == NULL)
-        return (NULL);
+	if (result == NULL)
+		return (NULL);
 
-    for (arg = 0; arg < ac; arg++)
-    {
-        for (subarg = 0; av[arg][subarg]; subarg++)
-        {
-            result[current_index++] = av[arg][subarg];
-        }
-        result[current_index++] = '\n';
-    }
+	for (arg = 0; arg < ac; arg++)
+	{
+		for (subarg = 0; av[arg][subarg]; subarg++)
+		{
+			result[current_index++] = av[arg][subarg];
+		}
+		result[current_index++] = '\n';
+	}
 
-    result[total_length] = '\0';
+	result[total_length] = '\0';
 
-    return (result);
+	return (result);
 }
