@@ -5,19 +5,19 @@
  * @array: Type int array pointer
  * @size: Type pointer size of the array
  * @cmp: Type pointer to the function compare values
- * Return: return -1 if size <= 0 or elem no matches -1
+ * Return: return -1 if size <=0 or elem no matches -1
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
-    int a;
+	int x;
 
-    if (array == NULL || cmp == NULL || size < 1)
-        return (-1);
+	if (array == NULL || cmp == NULL || size < 1)
+		return (-1);
 
-    for (a = 0; a < size; a++)
-    {
-        if (cmp(*(array + a))
-            return (a);
-    }
-    return (-1);
+	for (x = 0; x < size; x++)
+	{
+		if (cmp(*(array + x)))
+			return (x);
+	}
+	return (-1);
 }
