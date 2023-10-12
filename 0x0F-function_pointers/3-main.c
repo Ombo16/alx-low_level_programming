@@ -1,42 +1,44 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "calc.h"
+#include "3-calc.h"
 
-int main(int argc, char *argv[]) {
-    if (argc != 4) {
-        printf("Error\n");
-        return 98;
-    }
+/**
+ * main - Entry point
+ * @argc: Number of arguments
+ * @argv: Array of argument strings
+ *
+ * Return: Always 0 (Success)
+ */
+int main(int argc, char *argv[])
+{
+	int num1, num2;
+	int result;
+	int (*op_func)(int, int);
 
-    int num1 = atoi(argv[1]);
-    int num2 = atoi(argv[3]);
-    char operator = argv[2][0];
+	if (argc != 4)
+	{
+		printf("Error\n");
+		return (1);
+	}
 
-    int result;
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
+	op_func = get_op_func(argv[2]);
 
-    if (operator == '+') {
-        result = add(num1, num2);
-    } else if (operator == '-') {
-        result = sub(num1, num2);
-    } else if (operator == '*') {
-        result = mul(num1, num2);
-    } else if (operator == '/') {
-        if (num2 == 0) {
-            printf("Error\n");
-            return 100;
-        }
-        result = divi(num1, num2);
-    } else if (operator == '%') {
-        if (num2 == 0) {
-            printf("Error\n");
-            return 100;
-        }
-        result = mod(num1, num2);
-    } else {
-        printf("Error\n");
-        return 99;
-    }
+	if (!op_func)
+	{
+		printf("Error\n");
+		return (99);
+	}
 
-    printf("%d\n", result);
-    return 0;
+	if ((argv[2][0] == '/' || argv[2][0] == '%') && num2 == 0)
+	{
+		printf("Error\n");
+		return (100);
+	}
+
+	result = op_func(num1, num2);
+	printf("%d\n", result);
+
+	return (0);
 }
