@@ -1,19 +1,6 @@
 #include <stdlib.h>
-#include <string.h>
 #include "lists.h"
-
-/**
- * struct list_s - singly linked list
- * @str: string (malloc'ed string)
- * @len: length of the string
- * @next: points to the next node
- */
-typedef struct list_s
-{
-	char *str;
-	unsigned int len;
-	struct list_s *next;
-} list_t;
+#include <string.h>
 
 /**
  * add_node - Adds a new node at the beginning of a list_t list.
@@ -33,7 +20,6 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 
 	new_node->str = strdup(str);
-
 	if (new_node->str == NULL)
 	{
 		free(new_node);
@@ -46,4 +32,3 @@ list_t *add_node(list_t **head, const char *str)
 
 	return (new_node);
 }
-
