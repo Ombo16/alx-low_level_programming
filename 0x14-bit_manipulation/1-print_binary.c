@@ -6,27 +6,27 @@
  */
 void print_binary(unsigned long int n)
 {
-    int i;
+    if (n == 0)
+    {
+        _putchar('0');
+        return;
+    }
+
+    int shift;
     int flag = 0;
 
-    for (i = (sizeof(unsigned long int) * 8 - 1); i >= 0; i--)
+    for (shift = (sizeof(unsigned long int) * 8 - 1); shift >= 0; shift--)
     {
-        unsigned long int mask = 1UL << i;
+        unsigned long int mask = 1UL << shift;
 
         if (n & mask)
         {
-            putchar('1');
+            _putchar('1');
             flag = 1;
         }
         else if (flag)
         {
-            putchar('0');
+            _putchar('0');
         }
     }
-
-    if (!flag)
-    {
-        putchar('0');
-    }
 }
-
