@@ -13,30 +13,23 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	if (b == NULL)
-		exit(1);
+	unsigned int len = 0, i, bin, deci;
+	unsigned int sum = 0;
 
-	unsigned int result = 0;
+	while (b[len])
+		len++;
 
-	while (*b != '\0')
+	for (i = 0; i < len; i++)
 	{
-		char c = *b;
+		if (b[i] < '0' || b[i] > '1')
+			return (0);
 
-		if (c == '0')
-		{
-			result = (result << 1); 
-		}
-		else if (c == '1')
-		{
-			result = (result << 1) | 1;
-		}
 		else
 		{
-			return (0);
+			bin = b[i] - '0';
+			deci = bin << (len - i - 1);
+			sum += deci;
 		}
-
-		b++;
 	}
-
-	return (result);
+	return (sum);
 }
