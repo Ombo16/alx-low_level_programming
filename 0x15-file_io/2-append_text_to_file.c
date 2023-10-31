@@ -1,4 +1,7 @@
 #include "main.h"
+#include <unistd.h>
+#include <fcntl.h>
+#include <stdio.h>
 
 /**
  * append_text_to_file - appends text at the end of a file
