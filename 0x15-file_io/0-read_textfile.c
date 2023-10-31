@@ -1,7 +1,7 @@
-#include "main.h"
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
+#include "main.h"
 
 ssize_t _putchar(char c) {
     return write(STDOUT_FILENO, &c, 1);
@@ -12,7 +12,7 @@ ssize_t read_textfile(const char *filename, size_t letters) {
     ssize_t bytes_read, bytes_written;
     char *buffer;
 
-    if (filename == NULL)
+    if (filename == 0)
         return 0;
 
     fd = open(filename, O_RDONLY);
@@ -20,7 +20,7 @@ ssize_t read_textfile(const char *filename, size_t letters) {
         return 0;
 
     buffer = malloc(letters);
-    if (buffer == NULL) {
+    if (buffer == 0) {
         close(fd);
         return 0;
     }
